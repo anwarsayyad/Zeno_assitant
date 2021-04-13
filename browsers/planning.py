@@ -1,12 +1,15 @@
 import pandas as pd
 import csv
-def main(day,time,task,imp):
-    filename  = 'myplans.csv'
+def werite(day,time,task,imp):
+    
     header = ('day','time','task','imp')
     data = [
-            (day,time,task,imp),
+            day,time,task,imp
            ]
-    
-def write(day,time,task,imp):
-    task = pd.read_csv('D:\Zeno\extra_files\myplan.csv')
+    filename = 'myplan.csv' 
+    with open(filename,'w') as csvfile:
+        csvwriter = csv.writer(csvfile)
+        csvwriter.writerow(header)
+        
+        
     

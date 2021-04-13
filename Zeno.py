@@ -79,24 +79,25 @@ if __name__ == "__main__":
            if 'add' in nq:
                done = True
                while done:
-                 speak('tell me day ')
-                 r_day = Takecommand().lower()
-                 if ( 'monday'or'tuesday'or 'wednesday' or 'thursday' or 'friday' or 'saturday') in r_day:
+                    speak('tell me day ')
+                    r_day = Takecommand().lower()
+                    days = ['monday','tuesday','wednesday' ,'thursday' ,'friday' ,'saturday']
+                    if r_day in days:
 
-                     print(r_day)
-                     day = r_day
-                     done = False
-                 else:
-                     print(r_day)
-                     speak('its not currect day please try again')
+                        print(r_day)
+                        day = r_day
+                        done = False
+                    else:
+                        print(r_day)
+                        speak('its not currect day please try again')
                done = True
                while done:
                     speak('tell me which time want to  your task to do')
                     r_time = Takecommand()
-                    num = '1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24'
-                    if r_time in num:
+                    l_time = '1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24'
+                    if r_time in l_time:
                          print(r_time)
-                         time = int(num)
+                         p_time = int(r_time)
                          done =False
                     else:
                          speak('sorry please say in numbers')
@@ -113,20 +114,24 @@ if __name__ == "__main__":
                         done = False
                done = True
                while done:
-                    speak('do you have any important work    ')
+                    speak('do you have any important work . please reply in yes or no format   ')
                     rep_1 = Takecommand().lower()
                     if 'yes' in rep_1:
+                        speak('please tell what is the imporatant work ')
                         r_imp = Takecommand().lower()
                         print(r_imp)
                         print('you want to save your important task ? please reply in yes or no')
-                        res = Takecommand().loewr()
+                        res = Takecommand().lower()
                         if 'yes' in res:
                             imp = r_imp
                             done = False
-                        elif 'no' in rep_1:
-                            imp = ''
-                        else:
-                            speak('please say it again i cant understand ')
+                    elif 'no' in rep_1:
+                        imp = ''
+                        done = False
+                    else:
+                        speak('please say it again i cant understand ')
+               p.werite(day,p_time,task,imp)                                        
+                
 
                 
            elif 'know' in nq:
